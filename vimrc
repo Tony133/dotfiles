@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set encoding=utf-8            " Enconding utf-8
 
 "Install vundle
 let shouldInstallBundles = 0
@@ -37,6 +38,11 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'burnettk/vim-angular'
+
+if shouldInstallBundles == 1
+    echo "~> Installing vundle bundles"
+    :BundleInstall
+endif
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -95,6 +101,7 @@ set ruler                               " Show line, column number, and relative
 set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
 set shiftwidth=4                        " Use 4 spaces for (auto)indent
 let mapleader = ","                     " Set the <Leader> for combo commands
+hi normal ctermbg=NONE                  " Stuff for iTerm
 
 
 " Unmap arrow keys (vim hardcore mode)
@@ -131,8 +138,13 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/
 " Ignore folders for ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](report|build|_build|bin|cache|vendor|node_modules|dist|bower_components|_site)$',
+    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
     \ }
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~
+
+" Clear File Cache
+nmap <leader>cc :CtrlPClearCache<cr>
+    
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 
 " Do not change the current path
 let g:ctrlp_working_path_mode = '0'
