@@ -38,11 +38,14 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'burnettk/vim-angular'
+<<<<<<< HEAD
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
     :BundleInstall
 endif
+=======
+>>>>>>> ac187fc076746fa53cb26a35f31476af3a358373
 
 call vundle#end()            " required
 filetype plugin indent on
