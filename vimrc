@@ -19,13 +19,11 @@ Plugin 'VundleVim/Vundle.vim'
 " ======================= PLUGINS =======================
  
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'benmills/vimux'
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'mattn/webapi-vim'
@@ -38,6 +36,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'burnettk/vim-angular'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -67,8 +66,14 @@ colorscheme hybrid_material
 
 " ======================= SETTINGS ======================
 
-set number
-set relativenumber
+" set number and relativenumber
+if exists("+relativenumber")
+    set nonumber
+    set relativenumber
+else
+    set number
+endif
+
 set tabstop=4
 set autoindent                          " Make sure that unrecognized files are still indented
 set showcmd                             " Show (partial) commands (or size of selection in Visual mode) in the status
@@ -105,6 +110,20 @@ vno <down> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>h :split <C-R>=expand("%:p:h") . '/'<CR>
+
+" easy split resize
+map + :vertical resize +5<cr>
+map - :vertical resize -5<cr>
+map = <c-w>=
+
+" open a new vertical split
+map <Leader>\| :vnew<cr>
 
 " Remove trailing spaces
 au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
