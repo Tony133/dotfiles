@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'benmills/vimux'
 Plugin 'kristijanhusak/vim-hybrid-material'
@@ -52,6 +53,10 @@ set t_Co=256                                                                    
 
 let g:enable_bold_font = 1
 
+syntax enable
+set background=dark
+colorscheme hybrid_material
+
 " ======================= AIRLINE =======================
 " remember to install fonts powerline before using vim-airline
 
@@ -63,12 +68,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for 
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
 let g:airline_section_z = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'  "Set relative path
 let g:airline_powerline_fonts = 1												"Enable powerline fonts
-let g:airline_theme = "wombat"													"Set theme to powerline default theme
-
-syntax enable
-set background=dark
-colorscheme hybrid_material
-
+let g:airline_theme = "wombat"	
 
 " ======================= SETTINGS ======================
 
@@ -80,43 +80,51 @@ else
     set number
 endif
 
-set tabstop=4
-set autoindent                          " Make sure that unrecognized files are still indented
-set showcmd                             " Show (partial) commands (or size of selection in Visual mode) in the status
-set showmatch                           " When a bracket is inserted, briefly jump to a matching one
-set enc=utf-8       					" Use UTF-8 as the default buffer encoding
-set showtabline=2                       " Make sure that tabline is always present
-set laststatus=2    					" Always show status line, even for one window
-set mouse=""        					" Disable mouse
-set expandtab      						" Use softtabstop spaces instead of tab characters for indentation
-set shiftwidth=4    					" Indent by 4 spaces when using >>, <<, == etc.
-set softtabstop=4   					" Indent by 4 spaces when pressing <TAB>
-set autoindent      					" Keep indentation from previous line
-set smartindent     					" Automatically inserts indentation in some cases
-set exrc                                " Enable project specific .vimrc
-set secure                              " Enable secure mode
+" Allow backspacing over everything
+set backspace=indent,eol,start  
+
+set tabstop=4             " Use 4 spaces for <Tab> and :retab
+set cursorline            " Highlight current line - allows you to track cursor position more easily
+set completeopt=menuone   " Insert mode completion options
+set infercase             " Allow smarter completion by infering the case
+set autoindent            " Make sure that unrecognized files are still indented
+set showcmd               " Show (partial) commands (or size of selection in Visual mode) in the status
+set showmatch             " When a bracket is inserted, briefly jump to a matching one
+set enc=utf-8       	  " Use UTF-8 as the default buffer encoding
+set showtabline=1         " Make sure that tabline is always present
+set laststatus=2    	  " Always show status line, even for one window
+set mouse=""        	  " Disable mouse
+set expandtab      		  " Use softtabstop spaces instead of tab characters for indentation
+set shiftwidth=4    	  " Indent by 4 spaces when using >>, <<, == etc.
+set softtabstop=4   	  " Indent by 4 spaces when pressing <TAB>
+set autoindent      	  " Keep indentation from previous line
+set smartindent     	  " Automatically inserts indentation in some cases
+set exrc                  " Enable project specific .vimrc
+set secure                " Enable secure mode
 set backupdir=/tmp
-set directory=/tmp                      " Don't clutter my dirs up with swp and tmp files
-set ruler                               " Show line, column number, and relative position within a file in the status
-set scrolloff=999                       " Scroll when cursor gets within 10 characters of top/bottom edge
-set shiftwidth=4                        " Use 4 spaces for (auto)indent
-let mapleader = ","                     " Set the <Leader> for combo commands
-hi normal ctermbg=NONE                  " Stuff for iTerm
+set directory=/tmp        " Don't clutter my dirs up with swp and tmp files
+set ruler                 " Show line, column number, and relative position within a file in the status
+set scrolloff=999         " Scroll when cursor gets within 10 characters of top/bottom edge
+set shiftwidth=4          " Use 4 spaces for (auto)indent
+
+let mapleader = ","       " Set the <Leader> for combo commands
+
+hi normal ctermbg=NONE    " Stuff for iTerm
 
 
 " Unmap arrow keys (vim hardcore mode)
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-vno <up> <Nop>
+" no <down> <Nop>
+" no <left> <Nop>
+" no <right> <Nop>
+" no <up> <Nop>
+" ino <down> <Nop>
+" ino <left> <Nop>
+" ino <right> <Nop>
+" ino <up> <Nop>
+" vno <down> <Nop>
+" vno <left> <Nop>
+" vno <right> <Nop>
+" vno <up> <Nop>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -159,6 +167,7 @@ map <Leader>mk :mkdir %:h<CR><CR>
 map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
 vmap <Leader>, <ESC><ESC>:w<CR>
+
 
 " if you do not use plugins airline
 
