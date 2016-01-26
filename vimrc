@@ -157,6 +157,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 " Do not change the current path
 let g:ctrlp_working_path_mode = '0'
 
+let g:ctrlp_match_window = 'max:30'
+
 " Exclude vendor folder during search
 :set wildignore+=**/vendor/**
 
