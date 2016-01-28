@@ -18,7 +18,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " ======================= PLUGINS =======================
- 
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
@@ -39,6 +39,8 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'burnettk/vim-angular'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Yggdroot/indentLine'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -68,7 +70,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for 
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
 let g:airline_section_z = '%{substitute(getcwd(), expand("$HOME"), "~", "g")}'  "Set relative path
 let g:airline_powerline_fonts = 1												"Enable powerline fonts
-let g:airline_theme = "wombat"	
+let g:airline_theme = "wombat"
 
 " ======================= SETTINGS ======================
 
@@ -81,7 +83,7 @@ else
 endif
 
 " Allow backspacing over everything
-set backspace=indent,eol,start  
+set backspace=indent,eol,start
 
 set tabstop=4             " Use 4 spaces for <Tab> and :retab
 set cursorline            " Highlight current line - allows you to track cursor position more easily
@@ -106,10 +108,16 @@ set directory=/tmp        " Don't clutter my dirs up with swp and tmp files
 set ruler                 " Show line, column number, and relative position within a file in the status
 set scrolloff=999         " Scroll when cursor gets within 10 characters of top/bottom edge
 set shiftwidth=4          " Use 4 spaces for (auto)indent
+set tabstop=4             " Use 4 spaces for <Tab> and :retab
 
 let mapleader = ","       " Set the <Leader> for combo commands
 
 hi normal ctermbg=NONE    " Stuff for iTerm
+
+" Plugin indentLine 
+let g:indentLine_color_term = 239
+let g:indentLine_char = '┆'
+let g:indentLine_enabled = 1
 
 
 " Unmap arrow keys (vim hardcore mode)
@@ -151,12 +159,11 @@ let g:ctrlp_custom_ignore = {
 
 " Clear File Cache
 nmap <leader>cc :CtrlPClearCache<cr>
-    
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 
 " Do not change the current path
 let g:ctrlp_working_path_mode = '0'
-
 let g:ctrlp_match_window = 'max:30'
 
 " Exclude vendor folder during search
