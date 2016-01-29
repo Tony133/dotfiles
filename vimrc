@@ -119,7 +119,6 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
 let g:indentLine_enabled = 1
 
-
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
 no <left> <Nop>
@@ -176,7 +175,6 @@ map <Leader>mk :mkdir %:h<CR><CR>
 map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
 vmap <Leader>, <ESC><ESC>:w<CR>
-
 
 " if you do not use plugins airline
 
