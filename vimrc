@@ -42,6 +42,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
+Plugin 'suan/vim-instant-markdown'
+
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -115,24 +117,24 @@ let mapleader = ","       " Set the <Leader> for combo commands
 
 hi normal ctermbg=NONE    " Stuff for iTerm
 
-" Plugin indentLine 
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
 let g:indentLine_enabled = 1
 
+
 " Unmap arrow keys (vim hardcore mode)
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-vno <up> <Nop>
+" no <down> <Nop>
+" no <left> <Nop>
+" no <right> <Nop>
+" no <up> <Nop>
+" ino <down> <Nop>
+" ino <left> <Nop>
+" ino <right> <Nop>
+" ino <up> <Nop>
+" vno <down> <Nop>
+" vno <left> <Nop>
+" vno <right> <Nop>
+" vno <up> <Nop>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -176,6 +178,24 @@ map <Leader>mk :mkdir %:h<CR><CR>
 map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
 vmap <Leader>, <ESC><ESC>:w<CR>
+
+" Tmux integration
+let g:VimuxOrientation="h"
+nmap <Leader>r :VimuxRunCommand ''<Left>
+nmap <Leader>R :VimuxCloseRunner<CR>
+
+" ===================== MARKDOWN PLUGIN =======================
+
+" Update the display in realtime
+" let g:instant_markdown_slow = 1
+
+" Disable markdown preview
+let g:instant_markdown_autostart = 0
+
+" Open preview window
+map <Leader>mdp :InstantMarkdownPreview<CR>
+
+" =============================================================
 
 " if you do not use plugins airline
 
