@@ -43,7 +43,7 @@ Plugin 'burnettk/vim-angular'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'suan/vim-instant-markdown'
-
+Plugin 'tpope/vim-markdown'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -184,8 +184,10 @@ let g:VimuxOrientation="h"
 nmap <Leader>r :VimuxRunCommand ''<Left>
 nmap <Leader>R :VimuxCloseRunner<CR>
 
-" ===================== MARKDOWN PLUGIN =======================
+" MARKDOWN
+au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
+" ===================== MARKDOWN PLUGIN =======================
 " Update the display in realtime
 " let g:instant_markdown_slow = 1
 
