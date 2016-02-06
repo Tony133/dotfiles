@@ -126,18 +126,18 @@ let g:indentLine_enabled = 1
 
 
 " Unmap arrow keys (vim hardcore mode)
-" no <down> <Nop>
-" no <left> <Nop>
-" no <right> <Nop>
-" no <up> <Nop>
-" ino <down> <Nop>
-" ino <left> <Nop>
-" ino <right> <Nop>
-" ino <up> <Nop>
-" vno <down> <Nop>
-" vno <left> <Nop>
-" vno <right> <Nop>
-" vno <up> <Nop>
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
