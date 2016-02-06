@@ -27,6 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'benmills/vimux'
 Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'mattn/webapi-vim'
@@ -55,12 +56,14 @@ filetype plugin indent on
 
 " ======================= COLOR =========================
 set t_Co=256                                                                    "Set 256 colors
+set term=xterm-256color
 
 let g:enable_bold_font = 1
 
 syntax enable
 set background=dark
 colorscheme hybrid_material
+
 
 " ======================= AIRLINE =======================
 " remember to install fonts powerline before using vim-airline
@@ -123,18 +126,18 @@ let g:indentLine_enabled = 1
 
 
 " Unmap arrow keys (vim hardcore mode)
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-vno <up> <Nop>
+" no <down> <Nop>
+" no <left> <Nop>
+" no <right> <Nop>
+" no <up> <Nop>
+" ino <down> <Nop>
+" ino <left> <Nop>
+" ino <right> <Nop>
+" ino <up> <Nop>
+" vno <down> <Nop>
+" vno <left> <Nop>
+" vno <right> <Nop>
+" vno <up> <Nop>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
