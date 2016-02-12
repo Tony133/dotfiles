@@ -45,6 +45,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
+Plugin 'elzr/vim-json'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
