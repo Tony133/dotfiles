@@ -46,6 +46,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'elzr/vim-json'
+Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -64,7 +66,6 @@ let g:enable_bold_font = 1
 syntax enable
 set background=dark
 colorscheme hybrid_material
-
 
 " ======================= AIRLINE =======================
 " remember to install fonts powerline before using vim-airline
@@ -125,6 +126,8 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
 let g:indentLine_enabled = 1
 
+" Add column for gitgutter
+let g:gitgutter_sign_column_always = 1 
 
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
