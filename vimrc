@@ -194,6 +194,11 @@ nmap <Leader>R :VimuxCloseRunner<CR>
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
+" ===================== JSON PLUGIN ===========================
+let g:vim_json_syntax_conceal = 1
+
+" =============================================================
+
 " ===================== MARKDOWN PLUGIN =======================
 " Update the display in realtime
 " let g:instant_markdown_slow = 1
