@@ -48,6 +48,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'elzr/vim-json'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'leafgarland/typescript-vim'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
