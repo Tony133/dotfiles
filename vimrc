@@ -45,6 +45,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
+Plugin 'majutsushi/tagbar'
 Plugin 'elzr/vim-json'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
@@ -73,7 +74,7 @@ colorscheme hybrid_material
 
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
-let g:airline#extensions#tabline#enabled = 0									"Disable tabline extension
+let g:airline#extensions#tabline#enabled = 0									"Enable tabline extension
 let g:airline#extensions#tabline#left_sep = ' ' 								"Left separator for tabline
 let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for tabline
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
@@ -123,12 +124,15 @@ let mapleader = ","       " Set the <Leader> for combo commands
 
 hi normal ctermbg=NONE    " Stuff for iTerm
 
+" Exit insert mode with jk
+:inoremap jk <esc>
+
+" Plugin IndetLine
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
 let g:indentLine_enabled = 1
 
-" Add column for gitgutter
-let g:gitgutter_sign_column_always = 1 
+let g:gitgutter_sign_column_always = 1
 
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
@@ -170,6 +174,13 @@ let g:ctrlp_custom_ignore = {
 " Clear File Cache
 nmap <leader>cc :CtrlPClearCache<cr>
 
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>h :split <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>mv :!mv % <C-R>=expand("%:p:h") . '/'<CR>
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 
 " Do not change the current path
@@ -195,14 +206,9 @@ nmap <Leader>R :VimuxCloseRunner<CR>
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
-" ===================== JSON PLUGIN ===========================
-let g:vim_json_syntax_conceal = 1
-
-" =============================================================
-
 " ===================== MARKDOWN PLUGIN =======================
-" Update the display in realtime
-" let g:instant_markdown_slow = 1
+
+let g:vim_json_syntax_conceal = 1
 
 " Disable markdown preview
 let g:instant_markdown_autostart = 0
