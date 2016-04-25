@@ -61,7 +61,8 @@ if shouldInstallBundles == 1
     :BundleInstall
 endif
 
-call vundle#end()            " required
+" required
+call vundle#end()
 filetype plugin indent on
 
 " ======================= COLOR =========================
@@ -75,11 +76,11 @@ set background=dark
 colorscheme hybrid_material
 
 " ======================= AIRLINE =======================
-" remember to install fonts powerline before using vim-airline
+" Remember to install fonts powerline before using vim-airline
 
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
-let g:airline#extensions#tabline#enabled = 0									"Enable tabline extension
+let g:airline#extensions#tabline#enabled = 0									"Disable tabline extension
 let g:airline#extensions#tabline#left_sep = ' ' 								"Left separator for tabline
 let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for tabline
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
@@ -89,10 +90,14 @@ let g:airline#extensions#tabline#buffer_min_count = 1
 
 " ======================= SETTINGS ======================
 
-" set number and relativenumber
+" Set number and relativenumber
 if exists("+relativenumber")
+    " Due to a problem with relative line numbers not persisting across new
+    " tabs and splits, set no line numbers at all...
     set nonumber
+    " ..then set relative ones.
     set relativenumber
+" ...otherwise let’s just have regular ones.
 else
     set number
 endif
@@ -127,14 +132,11 @@ let mapleader = ","       " Set the <Leader> for combo commands
 
 hi normal ctermbg=NONE    " Stuff for iTerm
 
-" ======================= MiniBuffer =======================
-
+" MINIBUFFER 
 " close buffer explorer on select
 let g:miniBufExplAutoStart = 0
 let g:miniBufExplCloseOnSelect = 1
 let g:miniBufExplVSplit = 35
-
-" ==========================================================
 
 " Exit insert mode with jk
 :inoremap jk <esc>
