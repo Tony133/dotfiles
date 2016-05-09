@@ -25,8 +25,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'powerline/powerline'
 Plugin 'benmills/vimux'
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
@@ -44,16 +44,12 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
+Plugin 'majutsushi/tagbar'
 Plugin 'elzr/vim-json'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 
 if shouldInstallBundles == 1
@@ -61,22 +57,19 @@ if shouldInstallBundles == 1
     :BundleInstall
 endif
 
-" required
-call vundle#end()
+call vundle#end()            " required
 filetype plugin indent on
 
 " ======================= COLOR =========================
 set t_Co=256                                                                    "Set 256 colors
 set term=xterm-256color
 
-let g:enable_bold_font = 1
-
 syntax enable
 set background=dark
 colorscheme hybrid_material
 
 " ======================= AIRLINE =======================
-" Remember to install fonts powerline before using vim-airline
+" remember to install fonts powerline before using vim-airline
 
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
@@ -84,13 +77,13 @@ let g:airline#extensions#tabline#enabled = 0									"Disable tabline extension
 let g:airline#extensions#tabline#left_sep = ' ' 								"Left separator for tabline
 let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for tabline
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
-let g:airline_powerline_fonts = 1												"Enable powerline fonts
-let g:airline_theme = "wombat"
+let g:airline_powerline_fonts = 1						   				    	"Enable powerline fonts
+let g:airline_theme = "raven"
 let g:airline#extensions#tabline#buffer_min_count = 1
 
 " ======================= SETTINGS ======================
 
-" Set number and relativenumber
+" set number and relativenumber
 if exists("+relativenumber")
     " Due to a problem with relative line numbers not persisting across new
     " tabs and splits, set no line numbers at all...
@@ -127,24 +120,14 @@ set backupdir=/tmp
 set directory=/tmp        " Don't clutter my dirs up with swp and tmp files
 set ruler                 " Show line, column number, and relative position within a file in the status
 set scrolloff=999         " Scroll when cursor gets within 10 characters of top/bottom edge
+set expandtab
 
 let mapleader = ","       " Set the <Leader> for combo commands
 
 hi normal ctermbg=NONE    " Stuff for iTerm
 
-" MINIBUFFER 
-" close buffer explorer on select
-let g:miniBufExplAutoStart = 0
-let g:miniBufExplCloseOnSelect = 1
-let g:miniBufExplVSplit = 35
-
 " Exit insert mode with jk
 :inoremap jk <esc>
-
-" Save changes
-map <Leader>s :w<CR>
-imap <Leader>s <ESC>:w<CR>
-vmap <Leader>s <ESC><ESC>:w<CR>
 
 " Plugin IndetLine
 let g:indentLine_color_term = 239
@@ -222,64 +205,15 @@ let g:VimuxOrientation="h"
 nmap <Leader>r :VimuxRunCommand ''<Left>
 nmap <Leader>R :VimuxCloseRunner<CR>
 
-" Json syntax
 let g:vim_json_syntax_conceal = 1
 
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
-" Update the display in realtime
-let g:instant_markdown_slow = 1
+" Enable markdown preview
+let g:instant_markdown_autostart = 1
 
-" Disable markdown preview
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_slow = 1
 
 " Open preview window
 map <Leader>mdp :InstantMarkdownPreview<CR>
-
-" If you do not use plugins airline
-
-"statusline setup
-set statusline =%#StatusLineFilename#
-set statusline+=[%f]    "tail of the filename
-set statusline+=%*
-
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-
-"read only flag
-set statusline+=%#identifier#
-set statusline+=%r
-set statusline+=%*
-
-"modified flag
-set statusline+=%#identifier#
-set statusline+=%m
-set statusline+=%*
-
-set statusline+=%{fugitive#statusline()}
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-
