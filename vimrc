@@ -212,7 +212,6 @@ au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
 " Enable markdown preview
 let g:instant_markdown_autostart = 1
-
 let g:instant_markdown_slow = 1
 
 " Open preview window
