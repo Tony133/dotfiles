@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " ======================= PLUGINS =======================
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
