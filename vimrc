@@ -202,6 +202,12 @@ nmap <Leader>R :VimuxCloseRunner<CR>
 
 let g:vim_json_syntax_conceal = 1
 
+" PHP
+au FileType php set omnifunc=phpcomplete#CompletePHP
+" LESS
+au BufNewFile,BufRead *.less set filetype=less
+" HTML
+au BufRead,BufNewFile *.twig set filetype=html
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 
