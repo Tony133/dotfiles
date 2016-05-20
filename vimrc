@@ -122,8 +122,6 @@ set expandtab
 
 let mapleader = ","       " Set the <Leader> for combo commands
 
-hi normal ctermbg=NONE    " Stuff for iTerm
-
 " Exit insert mode with jk
 :inoremap jk <esc>
 
