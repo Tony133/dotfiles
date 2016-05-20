@@ -202,6 +202,8 @@ let g:vim_json_syntax_conceal = 1
 
 " PHP
 au FileType php set omnifunc=phpcomplete#CompletePHP
+" SASS
+au BufNewFile,BufRead *.scss set filetype=scss
 " LESS
 au BufNewFile,BufRead *.less set filetype=less
 " HTML
