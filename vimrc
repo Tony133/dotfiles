@@ -143,12 +143,6 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>h :split <C-R>=expand("%:p:h") . '/'<CR>
-
 " easy split resize
 map + :vertical resize +5<cr>
 map - :vertical resize -5<cr>
@@ -166,6 +160,8 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
     \ }
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
+
 " Clear File Cache
 nmap <leader>cc :CtrlPClearCache<cr>
 
@@ -175,8 +171,6 @@ map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>h :split <C-R>=expand("%:p:h") . '/'<CR>
 map <Leader>mv :!mv % <C-R>=expand("%:p:h") . '/'<CR>
-
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 
 " Do not change the current path
 let g:ctrlp_working_path_mode = '0'
