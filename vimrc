@@ -35,7 +35,6 @@ Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'suan/vim-instant-markdown'
@@ -204,6 +203,8 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufRead,BufNewFile *.twig set filetype=html
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
+" DOCKERFILE
+au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
 
 " Enable markdown preview
 let g:instant_markdown_autostart = 1
