@@ -124,7 +124,11 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '┆'
 let g:indentLine_enabled = 1
 
+" column for git +, - 
 let g:gitgutter_sign_column_always = 1
+
+" Emmet Redefine trigger key
+let g:user_emmet_leader_key='<C-Z>'
 
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
