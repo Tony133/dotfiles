@@ -158,7 +158,7 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/
 " Ignore folders for ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](report|build|_build|bin|cache|vendor|node_modules|dist|bower_components|_site)$',
-    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pages|pdf)$',
     \ }
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
