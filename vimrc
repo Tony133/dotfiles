@@ -70,7 +70,7 @@ let g:airline#extensions#tabline#left_sep = ' ' 								"Left separator for tabl
 let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for tabline
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
 let g:airline_powerline_fonts = 1						   				    	"Enable powerline fonts
-let g:airline_theme = "raven"
+let g:airline_theme = "raven"                                                   "Setting theme airline 
 
 " ======================= SETTINGS ======================
 
