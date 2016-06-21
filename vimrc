@@ -36,7 +36,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
@@ -117,11 +116,6 @@ let mapleader = ","       " Set the <Leader> for combo commands
 
 " Exit insert mode with jk
 :inoremap jk <esc>
-
-" Plugin IndetLine
-let g:indentLine_color_term = 239
-let g:indentLine_char = '┆'
-let g:indentLine_enabled = 1
 
 " column for git +, - 
 let g:gitgutter_sign_column_always = 1
