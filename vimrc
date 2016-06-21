@@ -49,11 +49,11 @@ if shouldInstallBundles == 1
 endif
 
 " required
-call vundle#end() 
+call vundle#end()
 filetype plugin indent on
 
-" ======================= COLOR =======================
-set t_Co=256                                                                    "Set 256 colors
+"Set 256 colors
+set t_Co=256
 set term=xterm-256color
 
 syntax enable
