@@ -48,9 +48,11 @@ if shouldInstallBundles == 1
     :BundleInstall
 endif
 
-call vundle#end()            " required
+" required
+call vundle#end()   
 filetype plugin indent on
 
+" ======================= COLOR =======================
 set t_Co=256                                                                    "Set 256 colors
 set term=xterm-256color
 
