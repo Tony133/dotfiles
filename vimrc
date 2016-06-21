@@ -49,7 +49,7 @@ if shouldInstallBundles == 1
 endif
 
 " required
-call vundle#end()   
+call vundle#end() 
 filetype plugin indent on
 
 " ======================= COLOR =======================
