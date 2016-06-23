@@ -182,6 +182,10 @@ map <Leader>, :w<CR>
 imap <Leader>, <ESC>:w<CR>
 vmap <Leader>, <ESC><ESC>:w<CR>
 
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
 " Tmux integration
 let g:VimuxOrientation="h"
 nmap <Leader>r :VimuxRunCommand ''<Left>
