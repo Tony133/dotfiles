@@ -64,10 +64,6 @@ colorscheme hybrid_material
 " remember to install fonts powerline before using vim-airline
 
 let g:Powerline_symbols = 'fancy'
-let g:airline#extensions#whitespace#enabled = 0                                 "Disable whitespace extension
-let g:airline#extensions#tabline#enabled = 0									"Disable tabline extension
-let g:airline#extensions#tabline#left_sep = ' ' 								"Left separator for tabline
-let g:airline#extensions#tabline#left_alt_sep = '|'								"Right separator for tabline
 let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
 let g:airline_powerline_fonts = 1						   				    	"Enable powerline fonts
 let g:airline_theme = "raven"                                                   "Setting theme airline 
