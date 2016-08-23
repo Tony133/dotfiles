@@ -190,6 +190,12 @@ nmap <Leader>R :VimuxCloseRunner<CR>
 " Syntastic json 
 let g:vim_json_syntax_conceal = 1
 
+" Settings syntastic
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0 
+
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_json_checkers=['jshint']
