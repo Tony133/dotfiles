@@ -20,8 +20,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'benmills/vimux'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'scrooloose/nerdcommenter'
@@ -48,25 +46,17 @@ if shouldInstallBundles == 1
     :BundleInstall
 endif
 
-" required
+" Required
 call vundle#end()
 filetype plugin indent on
 
-"Set 256 colors
+" Set 256 colors
 set t_Co=256
 set term=xterm-256color
 
 syntax enable
 set background=dark
 colorscheme hybrid_material
-
-" ======================= AIRLINE =======================
-" remember to install fonts powerline before using vim-airline
-
-let g:Powerline_symbols = 'fancy'
-let g:airline_section_y = '%{(&fenc == "" ? &enc : &fenc)}'                     "Set encoding type info
-let g:airline_powerline_fonts = 1						   				    	"Enable powerline fonts
-let g:airline_theme = "raven"                                                   "Setting theme airline 
 
 " ======================= SETTINGS ======================
 
@@ -220,3 +210,54 @@ let g:instant_markdown_slow = 1
 
 " Open preview window
 map <Leader>mdp :InstantMarkdownPreview<CR>
+
+"Statusline setup
+hi statusline guibg=DarkGrey ctermfg=8 guifg=White ctermbg=7
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=2
+  elseif
+    hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
+
+set statusline =%#StatusLineFilename#
+
+"tail of the filename and edit
+set statusline+=[%f]%m\            
+
+"display if &paste is set
+set statusline+=%{&paste?'\|\ [paste]':''}
+set statusline+=%*
+
+"read only flag
+set statusline+=%#identifier#
+set statusline+=%r
+set statusline+=%*
+
+set statusline+=%{fugitive#statusline()}
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"left/right separator
+set statusline+=%=  
+
+"display a warning if fileformat isnt unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+" display a warning if file encoding isnt utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+set statusline+=%*%y\|                                               " FileType
+set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'}\        " Encoding & Fileformat
+set statusline+=%*\|\ %3p%%\ \ %l/%L:\ %3c\                         " Rownumber/total (%)
