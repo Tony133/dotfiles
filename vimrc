@@ -147,7 +147,7 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/
 
 " Ignore folders for ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](report|build|_build|bin|cache|vendor|node_modules|dist|bower_components|_site)$',
+    \ 'dir': '\v[\/](report|build|_build|bin|cache|vendor|e2e|node_modules|dist|bower_components|_site)$',
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pages|pdf)$',
     \ }
 
@@ -187,7 +187,13 @@ let g:VimuxOrientation="h"
 nmap <Leader>r :VimuxRunCommand ''<Left>
 nmap <Leader>R :VimuxCloseRunner<CR>
 
+" Syntastic json 
 let g:vim_json_syntax_conceal = 1
+
+" Syntastic check
+let g:syntastic_html_checkers=['jshint']
+let g:syntastic_json_checkers=['jshint']
+let g:syntastic_php_checkers=['php']
 
 " PHP
 au FileType php set omnifunc=phpcomplete#CompletePHP
