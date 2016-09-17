@@ -37,7 +37,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/tabular'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
-Plugin 'elzr/vim-json'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
 
