@@ -131,6 +131,9 @@ map = <c-w>=
 " open a new vertical split
 map <Leader>\| :vnew<cr>
 
+" Use 2 space on specific files
+autocmd Filetype sls,js,javascript,yaml setlocal ts=2 sts=2 sw=2
+
 " Remove trailing spaces
 au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
 
