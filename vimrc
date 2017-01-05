@@ -261,4 +261,6 @@ set statusline+=%*
 
 set statusline+=%*%y\|                                               " FileType
 set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'}\        " Encoding & Fileformat
-set statusline+=%*\|\ %3p%%\ \ %l/%L:\ %3c\                         " Rownumber/total (%)
+
+" rownumber/total (%)
+set statusline+=%*\|\ %3p%%\ \ %l/%L:\ %3c\                
