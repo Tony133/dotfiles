@@ -212,7 +212,7 @@ let g:instant_markdown_slow = 1
 " Open preview window
 map <Leader>mdp :InstantMarkdownPreview<CR>
 
-"Statusline setup
+" Statusline setup
 hi statusline guibg=DarkGrey ctermfg=8 guifg=White ctermbg=7
 
 function! InsertStatuslineColor(mode)
@@ -228,14 +228,14 @@ au InsertLeave * hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
 
 set statusline =%#StatusLineFilename#
 
-"tail of the filename and edit
+" tail of the filename and edit
 set statusline+=[%f]%m\            
 
-"display if &paste is set
+" display if &paste is set
 set statusline+=%{&paste?'\|\ [paste]':''}
 set statusline+=%*
 
-"read only flag
+" read only flag
 set statusline+=%#identifier#
 set statusline+=%r
 set statusline+=%*
@@ -246,10 +246,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"left/right separator
+" left/right separator
 set statusline+=%=  
 
-"display a warning if fileformat isnt unix
+" display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 set statusline+=%*
