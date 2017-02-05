@@ -56,7 +56,7 @@ syntax enable
 set background=dark
 colorscheme hybrid_material
 
-" ======================= SETTINGS ======================
+" ========================================== SETTINGS ==============================================
 
 " set number and relativenumber
 if exists("+relativenumber")
@@ -213,7 +213,7 @@ let g:instant_markdown_slow = 1
 map <Leader>mdp :InstantMarkdownPreview<CR>
 
 " Statusline setup
-hi statusline guibg=DarkGrey ctermfg=8 guifg=White ctermbg=7
+hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
 
 function! InsertStatuslineColor(mode)
   if a:mode == 'i'
