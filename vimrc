@@ -134,7 +134,7 @@ map <Leader>\| :vnew<cr>
 autocmd Filetype sls,js,javascript,yaml setlocal ts=2 sts=2 sw=2
 
 " Remove trailing spaces
-au FileType vim,php,c,python,html,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
+au FileType vim,php,c,python,html,twig,yml,xml,js,javascript,md,sls au BufWritePre *.* :%s/\s\+$//e
 
 " Ignore folders for ctrlp
 let g:ctrlp_custom_ignore = {
@@ -259,7 +259,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
 
+" FileType
 set statusline+=%*%y\|                                               " FileType
+
+" Encoding & Fileformat
 set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'}\        " Encoding & Fileformat
 
 " rownumber/total (%)
