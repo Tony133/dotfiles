@@ -26,7 +26,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'shawncplus/phpcomplete.vim'
@@ -229,7 +228,7 @@ au InsertLeave * hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
 set statusline =%#StatusLineFilename#
 
 " tail of the filename and edit
-set statusline+=[%f]%m\            
+set statusline+=[%f]%m          
 
 " display if &paste is set
 set statusline+=%{&paste?'\|\ [paste]':''}
@@ -266,4 +265,4 @@ set statusline+=%*%y\|
 set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'} 
 
 " rownumber/total (%)
-set statusline+=%*\|\ %3p%%\ \ %l/%L:\ %3c\                
+set statusline+=%*\|\ %3p%%\ \%l/%L:\ %3c                
