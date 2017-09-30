@@ -137,7 +137,7 @@ au FileType vim,php,c,python,html,twig,yml,xml,js,javascript,md,sls au BufWriteP
 
 " Ignore folders for ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](report|build|_build|bin|cache|vendor|e2e|node_modules|dist|bower_components|_site)$',
+    \ 'dir': '\v[\/](report|build|__pycache__|_build|bin|cache|vendor|e2e|node_modules|dist|bower_components|_site)$',
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pages|pdf)$',
     \ }
 
