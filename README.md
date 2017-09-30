@@ -1,2 +1,2 @@
-#dotvim
+# dotvim
 My Vim configuration
