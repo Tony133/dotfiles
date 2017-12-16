@@ -213,6 +213,9 @@ map <Leader>mdp :InstantMarkdownPreview<CR>
 
 " Statusline setup
 
+highlight StatusLine guibg=DarkGrey ctermfg=7 guifg=white
+highlight StatusLineNC guibg=DarkGrey ctermfg=7 guifg=white
+
 set statusline =%#StatusLineFilename#
 
 " tail of the filename and edit
