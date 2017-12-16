@@ -212,18 +212,6 @@ let g:instant_markdown_slow = 1
 map <Leader>mdp :InstantMarkdownPreview<CR>
 
 " Statusline setup
-hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
-
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=2
-  elseif
-    hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
-  endif
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline guibg=DarkGrey ctermfg=8 guifg=white ctermbg=7
 
 set statusline =%#StatusLineFilename#
 
