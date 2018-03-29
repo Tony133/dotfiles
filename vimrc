@@ -188,7 +188,7 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
-let g:syntastic_json_checkers=['jshint']
+let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_php_checkers=['php']
 
 " PHP
