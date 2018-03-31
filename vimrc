@@ -102,7 +102,7 @@ let mapleader = ","       " Set the <Leader> for combo commands
 :inoremap jk <esc>
 
 " column for git +, - 
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " Emmet Redefine trigger key
 let g:user_emmet_leader_key='<C-Z>'
