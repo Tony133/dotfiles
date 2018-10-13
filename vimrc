@@ -198,7 +198,7 @@ au BufNewFile,BufRead *.scss set filetype=scss
 " LESS
 au BufNewFile,BufRead *.less set filetype=less
 " HTML
-au BufRead,BufNewFile *.twig set filetype=html
+au BufRead,BufNewFile *.twig,*.blade.php set filetype=html
 " MARKDOWN
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 " DOCKERFILE
