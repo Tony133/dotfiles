@@ -104,9 +104,6 @@ let mapleader = ","       " Set the <Leader> for combo commands
 " column for git +, - 
 set signcolumn=yes
 
-" Emmet Redefine trigger key
-let g:user_emmet_leader_key='<C-Z>'
-
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
 no <left> <Nop>
