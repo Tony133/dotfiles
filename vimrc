@@ -37,6 +37,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'pangloss/vim-javascript
+Plugin 'jelera/vim-javascript-syntax'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
