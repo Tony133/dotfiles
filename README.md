@@ -1,7 +1,7 @@
 # dotvim
 My Vim configuration
 
-## Install Stow
+### Install Stow
 
 Ubuntu/Debian
 ```
@@ -18,7 +18,7 @@ If you don’t already have Homebrew installed
   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## Install my dotvim
+### Install my dotvim
 
 ```
   $ mv dotvim .dotvim
