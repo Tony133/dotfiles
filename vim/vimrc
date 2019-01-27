@@ -202,6 +202,8 @@ au BufRead,BufNewFile *.twig,*.blade.php set filetype=html
 au BufRead,BufNewFile *.md,*mdown set filetype=markdown
 " DOCKERFILE
 au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
+" JAVASCRIPT
+au BufRead,BufNewFile *.ts,*.vue set filetype=javascript
 
 " Enable markdown preview
 let g:instant_markdown_autostart = 1
