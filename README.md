@@ -1,5 +1,5 @@
-# dotvim
-My Vim configuration
+# dotfiles
+My dotfiles
 
 ### Install Stow
 
@@ -18,11 +18,11 @@ If you don’t already have Homebrew installed
   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### Install my dotvim
+### Install my dotfiles
 
 ```
-  $ mv dotvim .dotvim
-  $ cd dotvim
+  $ mv dotfiles .dotfiles
+  $ cd .dotfiles
   $ stow vim
   $ stow tmux
 ```
