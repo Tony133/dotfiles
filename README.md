@@ -23,8 +23,6 @@ If you don’t already have Homebrew installed
 ```
   $ mv dotvim .dotvim
   $ cd dotvim
-  $ mv vim/vimrc vim/.vimrc
-  $ mv tmux/tmux.conf tmux/.tmux.conf
   $ stow vim
   $ stow tmux
 ```
