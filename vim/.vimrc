@@ -103,8 +103,12 @@ let mapleader = ","       " Set the <Leader> for combo commands
 " Exit insert mode with jk
 :inoremap jk <esc>
 
-" column for git +, - 
+" column for git +, -
 set signcolumn=yes
+
+" open all folds
+set foldmethod=indent
+set foldlevelstart=99
 
 " Unmap arrow keys (vim hardcore mode)
 no <down> <Nop>
@@ -176,14 +180,14 @@ let g:VimuxOrientation="h"
 nmap <Leader>r :VimuxRunCommand ''<Left>
 nmap <Leader>R :VimuxCloseRunner<CR>
 
-" Syntastic json 
+" Syntastic json
 let g:vim_json_syntax_conceal = 1
 
 " Settings syntastic
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0 
+let g:syntastic_check_on_wq = 0
 
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
@@ -220,7 +224,7 @@ highlight StatusLineNC guibg=DarkGrey ctermfg=7 guifg=white
 set statusline =%#StatusLineFilename#
 
 " tail of the filename and edit
-set statusline+=[%f]%m          
+set statusline+=[%f]%m
 
 " display if &paste is set
 set statusline+=%{&paste?'\|\ [paste]':''}
@@ -238,7 +242,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " left/right separator
-set statusline+=%=  
+set statusline+=%=
 
 " display a warning if fileformat isnt unix
 set statusline+=%#warningmsg#
@@ -251,13 +255,13 @@ set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
 
 " FileType
-set statusline+=%*%y\|  
+set statusline+=%*%y\|
 
 " Encoding & Fileformat
-set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'} 
+set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'}
 
 " rownumber/total (%)
-set statusline+=%*\|\ %3p%%\ \%l/%L:\ %3c 
+set statusline+=%*\|\ %3p%%\ \%l/%L:\ %3c
 
 
 "Alias
