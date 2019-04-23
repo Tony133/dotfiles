@@ -38,7 +38,6 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -56,6 +55,12 @@ set term=xterm-256color
 syntax enable
 set background=dark
 colorscheme hybrid_material
+set omnifunc=syntaxcomplete#Complete
+
+" See 120 char line
+set colorcolumn=120
+let &colorcolumn=join(range(121,999),",")
+highlight ColorColumn ctermbg=235
 
 " ========================================== SETTINGS ==============================================
 
@@ -185,13 +190,14 @@ let g:vim_json_syntax_conceal = 1
 
 " Settings syntastic
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 
 " Syntastic check
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_php_checkers=['php']
 
 " PHP
@@ -270,6 +276,7 @@ fun! SetupCommandAlias(from, to)
         \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
         \ .'? ("'.a:to.'") : ("'.a:from.'"))'
 endfun
+
 call SetupCommandAlias("W","w")
 call SetupCommandAlias("Q","q")
 call SetupCommandAlias("Wq","wq")
