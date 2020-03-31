@@ -38,6 +38,11 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'prettier/vim-prettier'
 
 if shouldInstallBundles == 1
     echo "~> Installing vundle bundles"
@@ -54,7 +59,7 @@ set term=xterm-256color
 
 syntax enable
 set background=dark
-colorscheme hybrid_material
+colorscheme onedark
 set omnifunc=syntaxcomplete#Complete
 
 " See 120 char line
@@ -151,6 +156,10 @@ let g:ctrlp_custom_ignore = {
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*~,*/node_modules/*
 
+" Plugin Prettier
+let g:prettier#autoformat = 1
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
 " Clear File Cache
 nmap <leader>cc :CtrlPClearCache<cr>
 
@@ -199,6 +208,15 @@ let g:syntastic_html_checkers=['jshint']
 let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_php_checkers=['php']
+
+
+let g:javascript_plugin_jsdoc = 1
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " PHP
 au FileType php set omnifunc=phpcomplete#CompletePHP
@@ -269,6 +287,9 @@ set statusline+=%*\ %{(&fenc!=''?&enc:&fenc)}\%{'['.&ff.']'}
 " rownumber/total (%)
 set statusline+=%*\|\ %3p%%\ \%l/%L:\ %3c
 
+
+highlight Comment gui=italic cterm=italic
+highlight htmlArg gui=italic cterm=italic
 
 "Alias
 fun! SetupCommandAlias(from, to)
