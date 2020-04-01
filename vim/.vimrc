@@ -41,7 +41,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'joshdick/onedark.vim'
-Plugin 'jdkanani/vim-material-theme'
 Plugin 'prettier/vim-prettier'
 
 if shouldInstallBundles == 1
