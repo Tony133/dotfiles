@@ -21,8 +21,5 @@ If you don’t already have Homebrew installed
 ### Install my dotfiles
 
 ```
-  $ mv dotfiles .dotfiles
-  $ cd .dotfiles
-  $ stow vim
-  $ stow tmux
+  $ sh installer.sh
 ```
