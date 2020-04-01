@@ -1,17 +1,21 @@
 # dotfiles
+
 My dotfiles
 
 ### Install Stow
 
 Ubuntu/Debian
+
 ```
   $ apt install stow
 ```
 
 MacOS
+
 ```
   $ brew install stow
 ```
+
 If you don’t already have Homebrew installed
 
 ```
@@ -21,5 +25,7 @@ If you don’t already have Homebrew installed
 ### Install my dotfiles
 
 ```
+  $ mv dotfiles .dotfiles
+  $ cd .dotfiles
   $ sh installer.sh
 ```
